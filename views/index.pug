@@ -1,0 +1,36 @@
+extends layout
+
+block content
+  script(src='/javascripts/controls.js')
+  h1= title
+  p Welcome to #{title}
+  table
+      thead
+        tr
+          th(class='dataColumn') ID
+          th(class='dataColumn') Name
+          th(class='dataColumn') City
+          th
+      tbody
+        - var i=0
+        each user in users
+            - i++
+            tr(class=(i % 2 == 0) ? 'odd' : 'even', id=('id_' + i))
+                td
+                    label #{user.id}
+                td
+                    input(value=(user.key),class='inputField')
+                td
+                    input(value=(user.key),class='inputField')
+                td
+                    button(onClick=('onUpdate(' + user.id + ')')) Update
+                    button(onClick=('onDelete(' + user.id + ')')) Delete
+        - i++
+        tr(class=(i % 2 == 0) ? 'odd' : 'even')
+
+  form(action='/submit',method='post')
+          label Name
+          input(class='inputField',name='name')
+          label Message
+          input(class='inputField',name='message')
+          button(id='btnAdd', type="submit") New Add User
