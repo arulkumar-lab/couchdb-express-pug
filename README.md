@@ -29,3 +29,5 @@ To run the application
 
 Browser URL:
 ```http://localhost:3000/```
+
+![couchdb_application](https://user-images.githubusercontent.com/56085499/75159811-ca19c080-5710-11ea-955e-4d64aa7e748c.PNG)
